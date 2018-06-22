@@ -27,7 +27,7 @@ export class AppComponent {
       content: 'An antidote which cures the poison',
       price: '75$',
       in_stock: 0,
-      created_at: new Date()
+      created_at: this.createdItem
     },
     {
       name: 'Sword',
@@ -41,14 +41,15 @@ export class AppComponent {
       content: 'It\'s awesome, It\'s wonderfull, It\'s FREE !!!!',
       price: 'FREE',
       in_stock: 0,
-      created_at: new Date()
-    },
-    {
+      created_at: this.createdItem
+    }
+/*  {
       name: 'Old Woman',
-      content: 'She is back ! Take care of the explosion ...',
+      content: 'She is back ! Be careful of the explosion ...',
       price: '2000$',
       in_stock: 0,
       created_at: new Date()
-    }
+    } 
+*/
   ]
 }

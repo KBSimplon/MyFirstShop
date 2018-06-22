@@ -1,4 +1,3 @@
-<!-- li.list-group-item>h1{name}+h2{date}+p{content}+h3{price}+button.btn.btn-success{Buy}+button.btn.btn-danger{Sell} -->
 <!-- 
   <li class="list-group-item"
   [ngStyle]="{color: getColor()}"> 
@@ -7,61 +6,38 @@
     'list-group-item-success': this.itemStock > 0,
     'list-group-item-danger': this.itemStock === 0
     }">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-6">
-        <h1 class="d-inline">{{ itemName }} </h1>
-        <h3 [ngClass]="{'d-inline': true,
+  <div class="row">
+    <div class="col-6">
+      <h1 class="d-inline">{{ itemName }} </h1>
+      <h3 [ngClass]="{'d-inline': true,
           'inStock': this.itemStock > 0,
           'outStock': this.itemStock === 0
           }"
-        >{{ itemPrice }}</h3>
-      </div>
-      <div class="col-6">
-        <h4>{{ itemDate | date: 'd/MM/y, h:mm a' }}</h4>
-      </div>
+      >{{ itemPrice }}</h3>
     </div>
-    <p>{{ itemContent }}</p>
-    <div class="row">
-      <div class="col-6">
-        <h4 class="d-inline">In Stock : </h4>
-        <h4 [ngClass]="{'d-inline': true,
-          'inStock': this.itemStock > 0,
-          'outStock': this.itemStock === 0
-          }">{{ itemStock }} </h4>
-        <h6 *ngIf="itemStock === 0" class="alert alert-warning d-inline">Out of stock ! Restocking on {{ itemDate | date }}</h6>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-success col-6"
-          [disabled]="this.itemStock === 0"
-          (click)="buyItem()"
-        >Buy</button>
-        <button class="btn btn-danger col-6"
-          (click)="sellItem()"
-        >Sell</button>
-      </div> 
+    <div class="col-6">
+      <h4>{{ itemDate | date: 'd/MM/y, h:mm a' }}</h4>
     </div>
   </div>
-  
-  <!-- <h1>{{ itemName }}</h1>
-  <h4>{{ itemDate | date: 'd/MM/y, h:mm a' }}</h4>
   <p>{{ itemContent }}</p>
-  <h3 [ngClass]="{
-    'inStock': this.itemStock > 0,
-    'outStock': this.itemStock === 0
-    }"
-  >{{ itemPrice }}</h3>
-  <h4>In Stock : </h4>
-  <h4 [ngClass]="{
-    'inStock': this.itemStock > 0,
-    'outStock': this.itemStock === 0
-    }">{{ itemStock }}</h4>
-  <h6 *ngIf="itemStock === 0" class="alert alert-warning">Out of stock ! Restocking on {{ itemDate | date }}</h6> 
-  <button class="btn btn-success"
-    [disabled]="this.itemStock === 0"
-    (click)="buyItem()"
-  >Buy</button>
-  <button class="btn btn-danger"
-    (click)="sellItem()"
-  >Sell</button> -->
+  <div class="row">
+    <div class="col-6">
+      <h4 class="d-inline">In Stock : </h4>
+      <h4 [ngClass]="{'d-inline': true,
+          'inStock': this.itemStock > 0,
+          'outStock': this.itemStock === 0
+          }"
+      >{{ itemStock }} </h4>
+      <h6 *ngIf="itemStock === 0" class="alert alert-warning">Out of stock ! Restocking on {{ itemDate | date }}</h6>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-success col-6"
+          [disabled]="this.itemStock === 0"
+          (click)="buyItem()"
+      >Buy</button>
+      <button class="btn btn-danger col-6"
+          (click)="sellItem()"
+      >Sell</button>
+    </div> 
+  </div>
 </li>

@@ -29,12 +29,14 @@ export class PostListComponent implements OnInit {
     this.itemStock++;
   }
 
-/*   getColor() {
+/*   
+  getColor() {
     if(this.itemStock === 0) {
       return 'red'; 
     } else {
       return 'lightgreen';
     }
-  } */
+  } 
+*/
 
 }
